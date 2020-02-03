@@ -1,0 +1,135 @@
+﻿基于Node.js+Express+MongoDB+Mongoose的web项目
+
+主要设计模式是 MVC+模块化的设计思想
+M  modle 数据模型  操作数据
+V view  视图
+C contoller 控制器(路由控制)
+
+主入口文件app.js
+app.js  加载文件
+
+
+
+
+
+127.0.0.1:3000/user
+app.js  所有功能都是在这个入口里面
+1:代码冗余很高
+2:代码迭代不高(更新)
+3:不利于团队的开发
+4:不利于后期的维护
+
+
+127.0.0.1:3000/index  访问首页模块  
+
+127.0.0.1:3000/user/reg
+127.0.0.1:3000/user/login
+
+
+
+第三方的静态模板地址：
+http://www.cssmoban.com/cssthemes/8138.shtml
+
+
+进入我的项目的根目录 
+npm install 安装依赖
+node app.js 
+在浏览器中输入  http://localhost:3000 访问
+
+{ useNewUrlParser: true } :消除警告
+
+//不必将html改成ejs 还继续使用ejs模板引擎
+app.engine("html",require("ejs").__express)
+
+
+项目的目录结构
+newProject
+┠app.js 入口文件 (所有的程序都通过这个入口进行访问)
+┠mondel 数据模型层 操作数据 (存放数据库 曾  删  改   查  操作)
+┠views 视图模板 (存放静态模板页面)
+┠static 静态文件的目录 (存放  css  js  image)
+┠package.json 项目的配置文件
+┠package.lock.json
+┠controller 控制器 路由 (处理业务逻辑层))
+┠libs  后台工具包 (公共包   连接数据库  重复功能 )
+┠upload  上传文件存放的目录
+┠reademe.txt 项目的说明文件
+
+
+
+
+需要使用的第三方包
+
+www.npmjs.com
+安装包:
+初始化:
+npm init -y
+
+1.Express  框架
+
+npm i express --save-dev
+
+
+2.mongoose Mongodb数据库
+npm install mongoose --save-dev
+
+
+3.body-parser 解析表单提交的数据
+npm install body-parser --save-dev
+
+
+4.ejs  模板引擎
+npm install ejs --save-dev
+
+5.fromidable 上传图片或者文件  (文件域) 获取上传文件的信息
+npm install formidable --save-dev
+
+6.path
+
+7.fs
+
+8.cookie-session  cookie-session 临时存储
+npm install cookie-session --save-dev
+
+9:npm install uuid   图片名字 uuid
+
+
+每个页面都有头部和尾部是公共的部分,视图分离.
+把头部和尾部切下来.
+新建一个静态文件  头部命名为:header.html     尾部:footer.html
+
+网站的公共部分 进行分离 header.html  footer.html
+<%include 引入文件路径%>  公共模板加载
+<% include  ./header.html %>
+<% include  ./footer.html %>
+
+
+
+密码加密:(框架自带的包)
+var crypto = require("crypto");
+//设置加密的内容
+const secret = 'dsadfdsfdkjfskdfkjafdddd';
+
+crypto.createHmac('sha256', secret).update("更新密码").digest('hex');
+
+
+session存储:
+//使用中间件 path secrt"""
+app.use(cookieSession({
+    name: 'sessionId',//修改客户端的session_key 标识符 sessionId 属性值  唯一标识id
+    //keys  给session 给定一个秘钥内容
+    keys: ['sssssssss', 'kedfdfdfdfdfdfy2']
+  }))
+
+
+
+
+res.locals.session = req.session.username
+
+安装:
+npm install uuid
+require("uuid/v1");
+
+
+
+

@@ -1,0 +1,42 @@
+<%include ./header.html%>
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">用户中心发表文章</h2>
+							<p class="page-title__text">欢迎您XXX</p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					
+						<div class="container">
+						用户中心发表文章
+						<form action="/user/publish" method="POST" enctype="multipart/form-data">
+						  标题:<input type="text" name="title" value=""/><br>
+						  描述:<input type="text" name="desc" value=""><br>
+						  内容:<textarea type="textarea" name="content"></textarea><br>
+						  图片:<input type="file" name="file"/>
+						  <input type="submit" value="发布文章"/>
+						</form>
+					</div>
+				
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+			<%include ./footer.html%>

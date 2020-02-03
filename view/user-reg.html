@@ -1,0 +1,47 @@
+<% include  ./header.html %>
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">用户中心注册</h2>
+							<p class="page-title__text">欢迎您XXX</p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<form action="/user/doreg" method="post">
+							<label>
+								用户名:<input type="text" name="username"/><br/>
+							</label>
+							<label>
+							    密码:<input type="password" name="password"><br/>
+							</label>	
+							<label>
+									<input type="radio" name="sex" value="1"/> 男
+									<input type="radio" name="sex" value="2"/> 女
+									<input type="radio" name="sex" value="3" checked/>保密
+									<br/>
+							</label>
+							<input type="submit" value="注册"/>
+						<form>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+		<% include ./footer.html%>

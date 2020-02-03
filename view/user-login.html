@@ -1,0 +1,39 @@
+  <%include ./header.html%>
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">用户中心登录</h2>
+							<p class="page-title__text">欢迎您XXX</p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<form action="/user/login" method="post">
+						<label>
+							用户名:<input type="text" name="username"/><br/>
+							密码:<input type="password" name="password"/><br/>
+							<input type="submit" value="登 录"/>
+						</label>
+						</form>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+		<%include ./footer.html%>
